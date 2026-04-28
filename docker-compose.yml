@@ -1,6 +1,4 @@
 services:
-  nginx:
-    image: nginx:latest
-    container_name: nginx-teste
-    ports:
-      - "8080:80"
+  hello-world:
+    image: hello-world
+    container_name: hello-world-teste
