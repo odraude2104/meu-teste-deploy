@@ -7,4 +7,4 @@ services:
       - "8080:80"
     volumes:
       # Mapeia a pasta atual do host para a pasta de arquivos do Nginx
-      - /data/meu-teste-deploy/:/usr/share/nginx/html:ro
+      - ./:/usr/share/nginx/html:ro
