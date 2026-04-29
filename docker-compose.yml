@@ -3,4 +3,4 @@ services:
     image: nginx:latest
     container_name: nginx-teste
     ports:
-      - "8090:80"
+      - "8091:80"
