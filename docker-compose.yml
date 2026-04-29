@@ -1,10 +1,11 @@
 services:
   python-app:
     image: python:3.9-slim
-    container_name: python
+    container_name: python-teste
     working_dir: /app
     volumes:
-      - .:/app
+      # Use um caminho fixo que VOCÊ controla no servidor
+      - /data/meu-app-python:/app
     ports:
       - "5000:5000"
     command: >
