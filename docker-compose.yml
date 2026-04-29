@@ -6,5 +6,5 @@ services:
     ports:
       - "8080:80"
     volumes:
-      # Monta a pasta atual (onde está o index.html) na pasta do nginx
+      # Mapeia a pasta atual do host para a pasta de arquivos do Nginx
       - ./:/usr/share/nginx/html:ro
