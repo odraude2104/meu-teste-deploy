@@ -1,9 +1,9 @@
 services:
   nginx:
     image: nginx:latest
-    container_name: meu-teste-deploy
+    container_name: nginx-teste
     restart: unless-stopped
     ports:
       - "8091:80"
     volumes:
-      - .:/usr/share/nginx/html:ro
+      - ./index.html:/usr/share/nginx/html/index.html:ro
