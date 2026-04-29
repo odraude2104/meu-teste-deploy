@@ -1,7 +1,7 @@
 services:
   nginx:
     image: nginx:latest
-    container_name: nginx-teste
+    container_name: meu-teste-deploy
     restart: unless-stopped
     ports:
       - "8091:80"
