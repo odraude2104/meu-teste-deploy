@@ -5,7 +5,7 @@ services:
     working_dir: /app
     volumes:
       # Use um caminho fixo que VOCÊ controla no servidor
-      - /data/meu-app-python:/app
+      - /tmp/meu-app-python:/app
     ports:
       - "5000:5000"
     command: >
