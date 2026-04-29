@@ -4,7 +4,6 @@ services:
     container_name: python-teste
     working_dir: /app
     volumes:
-      # Use um caminho fixo que VOCÊ controla no servidor
       - ./:/app
     ports:
       - "5000:5000"
