@@ -1,10 +1,23 @@
 services:
+  # Container que apenas baixa o código
+  git-sync:
+    image: alpine/git
+    container_name: git-downloader
+    volumes:
+      - ./app_data:/repo
+    command: >
+      clone https://github.com/odraude2104/meu-teste-deploy.git /repo
+
+  # Seu app principal
   python-app:
     image: python:3.9-slim
     container_name: python-teste
+    depends_on:
+      git-sync:
+        condition: service_completed_successfully
     working_dir: /app
     volumes:
-      - ./:/app
+      - ./app_data:/app
     ports:
       - "5000:5000"
     command: >
