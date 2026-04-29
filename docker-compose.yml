@@ -1,7 +1,7 @@
 services:
   python-app:
     image: python:3.9-slim
-    container_name: python-teste
+    container_name: python
     working_dir: /app
     volumes:
       - .:/app
