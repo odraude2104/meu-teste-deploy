@@ -1,10 +1,12 @@
 services:
-  nginx:
-    image: nginx:latest
-    container_name: meu-teste-deploy
-    restart: unless-stopped
-    ports:
-      - "8080:80"
+  python-app:
+    image: python:3.9-slim
+    container_name: python-teste
+    working_dir: /app
     volumes:
-      # Mapeia a pasta atual do host para a pasta de arquivos do Nginx
-      - ./:/usr/share/nginx/html:ro
+      - .:/app
+    ports:
+      - "5000:5000"
+    command: >
+      sh -c "pip install flask && python app.py"
+    restart: unless-stopped
