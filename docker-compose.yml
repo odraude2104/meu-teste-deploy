@@ -4,12 +4,10 @@ services:
     container_name: python-teste
     working_dir: /app
     volumes:
-      - ./app_data:/app
+      - ./:/app
     ports:
       - "5000:5000"
     command: >
-      sh -c "apt-get update && apt-get install -y git && 
-             git clone https://github.com/odraude2104/meu-teste-deploy.git . || git pull &&
-             pip install flask && 
+      sh -c "pip install flask &&
              python app.py"
     restart: unless-stopped
